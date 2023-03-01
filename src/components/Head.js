@@ -1,13 +1,23 @@
 // rafce
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleMenu } from '../utils/appSlice';
 
 const Head = () => {
+
+    const dispatch = useDispatch();
+
+    const toggleMenuHandler = () => {
+        dispatch(toggleMenu());
+    }
+
   return (
     <div className="grid grid-flow-col p-5 m-2 shadow-lg">
         <div className="flex col-span-1">
             <img
-                className='h-8'
+                className='h-8 cursor-pointer'
                 alt="menu"
+                onClick={() => toggleMenuHandler()}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbOFYlVrU65tBnWYP5bmEKpaCQbK7FMBMQJtRV7TJJug&s"
             />
             <img
